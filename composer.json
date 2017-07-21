@@ -1,0 +1,30 @@
+{
+  "name": "aglipanci/uberrush-api",
+  "description": "UberRUSH API Client for PHP",
+  "license": "MIT",
+  "keywords": [
+    "uber",
+    "uberrush",
+    "api-client"
+  ],
+  "type": "library",
+  "homepage": "https://github.com/aglipanci/uberrush-api",
+  "authors": [
+    {
+      "name": "Agli Panci",
+      "homepage": "https://github.com/aglipanci"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "~4.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "UberRush\\": "src/UberRush/"
+    }
+  },
+  "require": {
+    "php": "^5.6 || ~7.0",
+    "guzzlehttp/guzzle": "~6.0"
+  }
+}
