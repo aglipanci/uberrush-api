@@ -45,6 +45,19 @@ class Delivery extends AbstractResource
     protected $endpoint = 'deliveries';
 
     /**
+     * Delivery Quote - Create
+     *
+     * https://developer.uber.com/docs/deliveries/references/api/v1/deliveries-quote-post
+     *
+     * @param array $params
+     * @return mixed
+     */
+    public function quote(array $params = [])
+    {
+        return $this->setEndpoint($this->getEndpoint().'/quote')->setMethod('POST')->setParams($params)->send();
+    }
+
+    /**
      * Create a new delivery
      *
      * https://developer.uber.com/docs/deliveries/references/api/v1/deliveries-get
