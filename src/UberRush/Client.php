@@ -71,6 +71,8 @@ class Client
 
         ], $config);
 
+        $this->setSandbox($this->config['sandbox']);
+
         $this->http = new HttpClient;
     }
 
@@ -208,5 +210,21 @@ class Client
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * @param $mode
+     */
+    public function setSandbox($mode)
+    {
+        $this->sandbox = $mode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSandbox()
+    {
+        return $this->sandbox;
     }
 }
