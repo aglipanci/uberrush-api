@@ -74,7 +74,7 @@ abstract class AbstractResource
 
             }
 
-            throw new UberRushException($e->getMessage(), $e->getMessage());
+            throw new UberRushException($e->getMessage(), $e->getCode());
 
         } catch (\Exception $e) {
 
