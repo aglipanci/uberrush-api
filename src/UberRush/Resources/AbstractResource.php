@@ -149,7 +149,7 @@ abstract class AbstractResource
      */
     protected function setEndpoint($endpoint)
     {
-        $this->endpoint = $this->base_endpoint . $endpoint;
+        $this->endpoint = $endpoint;
 
         return $this;
     }
