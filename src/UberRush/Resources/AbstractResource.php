@@ -19,6 +19,13 @@ abstract class AbstractResource
     protected $client;
 
     /**
+     * Base Endpoint URL
+     *
+     * @var
+     */
+    protected $base_endpoint;
+
+    /**
      * Endpoint URL
      *
      * @var
@@ -112,6 +119,24 @@ abstract class AbstractResource
     /**
      * @return mixed
      */
+    protected function resetEndpoint()
+    {
+        $this->endpoint = $this->base_endpoint;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function getBaseEndpoint()
+    {
+        return $this->base_endpoint;
+    }
+
+    /**
+     * @return mixed
+     */
     protected function getEndpoint()
     {
         return $this->endpoint;
@@ -124,7 +149,7 @@ abstract class AbstractResource
      */
     protected function setEndpoint($endpoint)
     {
-        $this->endpoint = $endpoint;
+        $this->endpoint = $this->base_endpoint . $endpoint;
 
         return $this;
     }

@@ -42,7 +42,7 @@ class Delivery extends AbstractResource
      *
      * @var string
      */
-    protected $endpoint = 'deliveries';
+    protected $base_endpoint = 'deliveries';
 
     /**
      * Delivery Quote - Create
@@ -54,7 +54,7 @@ class Delivery extends AbstractResource
      */
     public function quote(array $params = [])
     {
-        return $this->setEndpoint($this->getEndpoint().'/quote')->setMethod('POST')->setParams($params)->send();
+        return $this->setEndpoint($this->getBaseEndpoint().'/quote')->setMethod('POST')->setParams($params)->send();
     }
 
     /**
@@ -67,7 +67,7 @@ class Delivery extends AbstractResource
      */
     public function create(array $delivery_params = [])
     {
-        return $this->setMethod('POST')->setParams($delivery_params)->send();
+        return $this->setEndpoint($this->getBaseEndpoint())->setMethod('POST')->setParams($delivery_params)->send();
     }
 
     /**
@@ -96,7 +96,7 @@ class Delivery extends AbstractResource
     public function get($delivery_id)
     {
 
-        return $this->setEndpoint($this->getEndpoint().'/'.$delivery_id)->setMethod('GET')->send();
+        return $this->setEndpoint($this->getBaseEndpoint().'/'.$delivery_id)->setMethod('GET')->send();
     }
 
     /**
@@ -110,6 +110,6 @@ class Delivery extends AbstractResource
     public function cancel($delivery_id)
     {
 
-        return $this->setEndpoint($this->getEndpoint().'/'.$delivery_id.'/cancel')->setMethod('POST')->send();
+        return $this->setEndpoint($this->getBaseEndpoint().'/'.$delivery_id.'/cancel')->setMethod('POST')->send();
     }
 }
