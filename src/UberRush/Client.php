@@ -82,7 +82,7 @@ class Client
      * @return \UberRush\Authentication\AccessToken
      *
      */
-    public function getAccessToken()
+    public function obtainAccessToken()
     {
 
         $raw_response = $this->http->post('https://login.uber.com/oauth/v2/token', ['form_params' => $this->config]);
@@ -93,6 +93,14 @@ class Client
         $this->setAccessToken($accessToken);
 
         return $accessToken;
+    }
+
+    /**
+     * @return \UberRush\Authentication\AccessToken $accessToken
+     */
+    public function getAccessToken()
+    {
+        return $this->accessToken;
     }
 
     /**
